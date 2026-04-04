@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="styles.min.css">
   <link rel="icon" href="favicon.ico">
   <script src="script.min.js" defer></script>
+
   <style>
     /* Global Styles */
     body {
@@ -23,34 +24,8 @@
       padding: 0;
       color: #333;
     }
-
-    /* Header */
-    header {
-      background-color: #2c3e50;
-      padding: 20px 0;
-    }
-    header h1 a {
-      color: #ecf0f1;
-      text-decoration: none;
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* Hero Section */
-    #hero {
-      background: url('path_to_image.jpg') no-repeat center center/cover;
-      color: #fff;
-      padding: 100px 0;
-      text-align: center;
-    }
-    #hero h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    #hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+    h1, h2, h3 {
+      color: #333;
     }
     .cta-button {
       background-color: #3498db;
@@ -82,21 +57,42 @@
       color: #3498db;
     }
 
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      .container {
-        width: 95%;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
-      #hero h2 {
-        font-size: 2.5rem;
-      }
-      .cta-button {
-        font-size: 1.1rem;
-        padding: 12px 24px;
-      }
+    /* Exit Intent Popup */
+    #exit-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    #exit-popup .popup-content {
+      background: #fff;
+      padding: 20px;
+      max-width: 600px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    #exit-popup .popup-content h2 {
+      margin-bottom: 10px;
+    }
+    #exit-popup .popup-content p {
+      margin-bottom: 20px;
+    }
+    #exit-popup .popup-content a {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 30px;
+    }
+    #exit-popup .popup-content a:hover {
+      background-color: #2980b9;
     }
   </style>
 </head>
@@ -127,19 +123,14 @@
     </div>
   </section>
 
-  <!-- Game Comparison Section -->
-  <section id="comparison" class="section">
-    <div class="container">
-      <h2>Why War Thunder is the Best SEO Free Game</h2>
-      <p>War Thunder is not just any **SEO Free Game**. It’s the game that offers a unique combination of **realistic tank**, **aircraft**, and **naval combat** that you can't find anywhere else. Plus, it’s completely free-to-play — start now and enjoy all the action with zero restrictions!</p>
-      <ul>
-        <li><strong>Free-to-Play:</strong> Enjoy military combat without spending a dime.</li>
-        <li><strong>Realism:</strong> The most realistic free military game out there.</li>
-        <li><strong>Multiple Combat Types:</strong> Tanks, aircraft, and naval combat — all in one game!</li>
-        <li><strong>Global Community:</strong> Join a massive, passionate community of players worldwide.</li>
-      </ul>
+  <!-- Exit Intent Popup -->
+  <div id="exit-popup">
+    <div class="popup-content">
+      <h2>Before You Go...</h2>
+      <p>Ready to dive into the ultimate free-to-play experience? War Thunder awaits!</p>
+      <a href="https://convert.ctypy.com/aff_c?offer_id=29176&aff_id=21885">Join Now for Free</a>
     </div>
-  </section>
+  </div>
 
   <!-- FAQ Section with Schema Markup -->
   <section id="faq" class="section">
@@ -147,11 +138,11 @@
       <h2>Frequently Asked Questions About SEO Free Games</h2>
       <div class="faq-item">
         <h3>What is an SEO Free Game?</h3>
-        <p>An **SEO Free Game** is a free-to-play game that ranks highly on search engines, offering players access to amazing gameplay without any hidden fees. War Thunder is the top **SEO Free Game** offering tanks, aircraft, and naval combat.</p>
+        <p>An **SEO Free Game** is a free-to-play game optimized for search engines, ranking highly for terms like 'free-to-play game', 'SEO game', and others. War Thunder is an SEO Free Game with tanks, aircraft, and naval combat.</p>
       </div>
       <div class="faq-item">
         <h3>Why should I play War Thunder, the top SEO Free Game?</h3>
-        <p>If you love military combat, **War Thunder** is the only **SEO Free Game** you’ll ever need. Immerse yourself in thrilling battles across the skies, land, and sea without ever paying a dime. Get started today — you’ll never look back!</p>
+        <p>War Thunder is an SEO Free Game that lets you experience the thrill of tanks, planes, and naval battles — all completely free. It’s the ultimate military combat game for fans of strategy and action!</p>
       </div>
       <div class="faq-item">
         <h3>How do I start playing War Thunder?</h3>
@@ -216,6 +207,18 @@
 
   <script>
     document.getElementById("current-year").textContent = new Date().getFullYear();
+    
+    // Exit Intent Popup Script
+    let exitPopup = document.getElementById('exit-popup');
+    document.addEventListener('mouseout', function (e) {
+      if (!e.relatedTarget && !e.toElement) {
+        exitPopup.style.display = 'flex';
+      }
+    });
+
+    exitPopup.addEventListener('click', function() {
+      exitPopup.style.display = 'none';
+    });
   </script>
 
 </body>
