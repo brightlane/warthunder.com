@@ -30,7 +30,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 SITE_URL  = "https://brightlane.github.io/warthunder"
-AFF_URL   = "https://convert.ctypy.com/aff_c?offer_id=29176&aff_id=21885"
+AFF_URL   = "https://convert.ctypy.com/aff_c?offer_id=29176&amp;aff_id=21885"
 SITE_NAME = "WarThunder Guide"
 TODAY     = datetime.date.today().isoformat()
 YEAR      = str(datetime.date.today().year)
